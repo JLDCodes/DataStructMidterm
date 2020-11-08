@@ -66,7 +66,13 @@ public:
 		}
 		return false;
 	}
-	float distance[0];
+
+
+	void swap(value_type* lhs, value_type* rhs) {
+		value_type hold = *lhs;
+		*lhs = *rhs;
+		*rhs = hold;
+	}
 
 	int partition(int low, int high)
 	{
@@ -77,10 +83,9 @@ public:
 			if (this->getAt(j) <= pivot)
 			{
 				i++;
-				//swap
-				value_type hold = pArray_[i];
-				pArray_[i] = pArray_[j];
-				pArray_[j] = hold;
+				//swap	
+				swap(&pArray_[i], &pArray_[j]);
+	
 			}
 		}
 		//swap 
