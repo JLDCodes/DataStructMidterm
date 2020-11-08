@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\JL\source\repos\Slow and Steady\Slow and Steady\SmartArray.h(69,1): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\JL\source\repos\Slow and Steady\Slow and Steady\SmartArray.h(69,1): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
+C:\Users\JL\source\repos\Slow and Steady\Slow and Steady\cPersonGenerator.h(43): message : see reference to class template instantiation 'SmartArray<std::string>' being compiled
+C:\Users\JL\source\repos\Slow and Steady\Slow and Steady\main.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\JL\source\repos\Slow and Steady\Slow and Steady\main.cpp(57,20): warning C4018: '<': signed/unsigned mismatch
+  Slow and Steady.vcxproj -> C:\Users\JL\source\repos\Slow and Steady\Debug\Slow and Steady.exe

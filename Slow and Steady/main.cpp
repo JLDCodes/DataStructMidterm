@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>		// String Stream
+#include <sstream>
 #include <string>
 #include "SmartArray.h"
 #include "cPersonGenerator.h"
@@ -17,18 +17,10 @@ int main()
 	std::string error = "Error!!!";
 	pGen->LoadCensusFiles("yob1880.txt", "Names_2010Census.csv", "Street_Names.csv", error);
 
-	//std::cout << "Number of names: " << pGen->getNumberOfNamesLoaded() << ", Number of surnames: " << pGen->getNumberOfSurnamesLoaded() << ", number of street names: " << pGen->getNumberOfStreetsLoaded() << "\n";
-	//std::cout << "First: " << pGen->nameVec.getAt(0) << ", " << pGen->surnameVec.getAt(0) << ", " << pGen->streetNameVec.getAt(0) << "\n";
-
-	//for (unsigned int i = 0; i < pGen->getNumberOfNamesLoaded(); i++) {
-	//	std::cout << pGen->nameVec.getAt(i) << ", " << pGen->surnameVec.getAt(i) << ", " << pGen->streetNameVec.getAt(i) << "\n";
-	//}
-
 	SmartArray<cPerson*> pepVec;
 	pepVec.addAtEnd(pGen->generateRandomPerson());
 	pepVec.addAtEnd(pGen->generateRandomPerson());
 	pepVec.addAtEnd(pGen->generateRandomPerson());
-
 
 	cContactTracer* cTracer = new cContactTracer();
 
@@ -53,23 +45,6 @@ int main()
 
 	cPerson* people = new cPerson[cTracer->peopleVec.getSize()];
 	unsigned int returnNumber = 4;
-	//cTracer->getPeople(people, returnNumber);
-	//
-	//for (int i = 0; i < returnNumber; i++) {
-	//	std::cout << people[i].first << "\n";
-	//}
-	//
-	//people[0].first = "FIRSTCOPY";
-	//for (int i = 0; i < returnNumber; i++) {
-	//	std::cout << people[i].first << "\n";
-	//}
-	//std::cout << "copy?" << "\n";
-	//for (unsigned int i = 0; i < cTracer->peopleVec.getSize(); i++) {
-	//	std::cout << cTracer->peopleVec.getAt(i)->first << "\n";
-	//}
-	//for (int i = 0; i < returnNumber; i++) {
-	//	std::cout << people[i].first << "\n";
-	//}
 
 	std::cout << "\n\nYEO\n\n";
 	cTracer->getPeopleCloserThanThis(666, 20.f, people, returnNumber);
@@ -77,18 +52,11 @@ int main()
 		std::cout << people[i].first << " distance:" << people[i].distance << "\n";
 	}
 
-	
-	//SmartArray<int> test;
-	//test.addAtEnd(5);
-	//test.addAtEnd(4);
-	//test.addAtEnd(70);
-	//test.addAtEnd(99);
-	//test.addAtEnd(69);
-	//test.quickSort(0, test.getSize() - 1);
-	//for (int i = 0; i < 5; i++) {
-	//	std::cout << test.getAt(i) << "\n";
-	//}
-
+	cTracer->getPeopleCloserThanThis(20, people, returnNumber);
+	std::cout << "\n\n";
+	for (int i = 0; i < returnNumber; i++) {
+		std::cout << people[i].first << " " << people[i].SIN << " "<< people[i].distance << "\n";
+	}
 
 }
 
